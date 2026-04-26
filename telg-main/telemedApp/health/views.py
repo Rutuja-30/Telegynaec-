@@ -15,13 +15,13 @@ from twilio.rest import Client
 from .models import CustomUser, Doctor_Auth, AshaWorker_Auth
 
 
-# twilio recovery code "2EY9E9T8BU3596PR97PZCZSE"
+# twilio recovery code 
 
 
 # postgres database connection
 def build_connection_with_database():
     conn = psycopg2.connect(database="telemedapp", host="localhost", port="5432", user="postgres",
-                            password="Pukale@123")
+                            password="")
     return conn
 
 
@@ -460,8 +460,8 @@ def user_request_ashaworker(request):
 
         # send ashaworker a notification about new patient's request
 
-        account_sid = 'ACa5f2857641077158c8ed19e6ed604843'
-        auth_token = '4869049d5c7df6a8c04d73c1616dacf7'
+        account_sid = ''
+        auth_token = ''
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(
@@ -644,9 +644,9 @@ def prediction_result(request):
         msg += " \n"
     msg += f"Result : {result}."
     # print(msg)
-    account_sid = 'ACa5f2857641077158c8ed19e6ed604843'
-    auth_token = '4869049d5c7df6a8c04d73c1616dacf7'
-    client = Client(account_sid, auth_token)
+    account_sid = '' 
+    auth_token=''
+    client = Client(, auth_token)
 
     message = client.messages.create(
         from_='whatsapp:+14155238886',
@@ -692,8 +692,8 @@ def send_prescription(request):
         Disclaimer: This blood test panel is used to screen for PCOS, but it cannot definitively diagnose the condition. Your doctor will interpret your results in conjunction with your medical history and further examination.
         
         """
-    account_sid = 'ACa5f2857641077158c8ed19e6ed604843'
-    auth_token = '4869049d5c7df6a8c04d73c1616dacf7'
+    account_sid = ''
+    auth_token=''
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
@@ -860,8 +860,8 @@ def ashaworker_is_booking_appointment1(request):
             time = "16:30 to 17:00"
 
 
-        account_sid = 'ACa5f2857641077158c8ed19e6ed604843'
-        auth_token = '4869049d5c7df6a8c04d73c1616dacf7'
+        account_sid = ''
+        auth_token = ''
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(
