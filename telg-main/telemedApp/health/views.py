@@ -460,7 +460,7 @@ def user_request_ashaworker(request):
 
         # send ashaworker a notification about new patient's request
 
-        account_sid = ''
+        account_sid =''
         auth_token = ''
         client = Client(account_sid, auth_token)
 
